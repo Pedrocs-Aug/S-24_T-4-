@@ -1,0 +1,45 @@
+/* Media Query: Aplica-se quando a largura da tela é menor que 600px */
+@media (max-width: 600px) {
+    
+    /* 1. Quebra as colunas principais em linhas */
+    .section {
+        flex-direction: column;
+    }
+    
+    /* 2. As colunas agora ocupam a largura total (ou quase total) */
+    .left-column,
+    .left-column2,
+    .right-column {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    
+    /* 3. A seção de data volta para a esquerda e ocupa 90% */
+    .right-column {
+        text-align: left;
+    }
+
+    /* 4. A seção de linhas (descrição e valores) */
+    .linhas-section {
+        flex-direction: column; /* Empilha descrição e valores */
+    }
+    
+    /* Os valores agora ficam abaixo da descrição, ocupando a largura total */
+    .linhas-inputs {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    /* 5. A seção de assinatura */
+    .signature-section {
+        flex-direction: column;
+        gap: 0; /* Remove espaçamento entre colunas */
+        margin-top: 10px;
+    }
+    
+    .signature-section > div {
+        width: 90%;
+        margin: 10px auto;
+    }
+}

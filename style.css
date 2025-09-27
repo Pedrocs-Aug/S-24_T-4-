@@ -1,0 +1,324 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Times New Roman', serif;
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    min-height: 90vh;
+    background-color: white;
+    gap: 20px;
+}
+
+.recibo-container {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    height: 500px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+
+    letter-spacing: 2px;
+    margin-top: 35px;
+}
+
+.section {
+    display: flex;
+    font-size: 18px;
+    flex-direction: row;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 120px;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 230px;
+}
+
+.left-column2 {
+    margin-top: 36px;
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    text-align: right;
+    font-size: 22px;
+
+    /* Alinha 'Data:' um pouco para baixo */
+}
+
+.checkbox-group label {
+    margin-bottom: 0px;
+    font-size: 1.2em;
+    margin-left: 25px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    /* Aumenta o tamanho do checkbox */
+    vertical-align: middle;
+}
+
+.line-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    margin-top: 10px;
+    font-size: 1.2em;
+    background: transparent;
+    width: 120px;
+    height: 20px;
+}
+
+.linhas-inputs {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 120px;
+    height: 250px;
+    align-items: center;
+    height: 200px;
+    margin-right: 85px;
+}
+
+.line-input1 {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    margin-top: 10px;
+    font-size: 1.1em;
+    background: transparent;
+    width: 508px;
+    height: 20px;
+}
+
+.linhas-descriptions {
+    display: flex;
+    flex-direction: column;
+    margin-left: 140px;
+    height: 200px;
+    width: 508px;
+    margin-right: 0;
+
+}
+
+.line-input:focus {
+    outline: none;
+    border-bottom: 1px dashed #555;
+}
+
+.total-section {
+    text-align: right;
+    /* Reduza o margin-top para que o rótulo fique mais próximo do seu input */
+    margin-top: 10px; 
+    
+    font-size: 25px; /* Manter este tamanho */
+    font-weight: bold;
+    width: 500px;
+    height: 25px;
+}
+
+
+
+.signature-section {
+    display: flex;
+    font-size: 0.9em;
+}
+
+.signature-line {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    margin-top: 0px;
+    font-size: 1.4em;
+    background: transparent;
+    width: 120px;
+    height: 20px;
+    width: 45%;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.signature-label {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.footer {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-size: 0.9em;
+}
+
+.date-input {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 2px 0;
+    font-size: 1em;
+    width: 142px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.linhas-section {
+    display: flex;
+    flex-direction: row;
+    margin-top: 22px;
+}
+
+.type-donate {
+    margin-bottom: 3px;
+    font-size: 24px;
+}
+
+.total-section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 25px;
+    font-weight: bold;
+    width: 500px;
+    height: 25px;
+    margin-top: 10px;
+}
+
+.line-total-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px 0;
+    margin-top: 10px;
+    font-size: 1.3em;
+    background: transparent;
+    width: 120px;
+    height: 28px;
+}
+
+.line-total-input:focus {
+    outline: none;
+    border-bottom: 1px dashed #555;
+}
+
+.signature-section {
+    display: flex;
+    justify-content: center;
+    font-size: 0.9em;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.signature-line {
+    width: 365px;
+}
+
+.footer {
+    font-size: 20px;
+}
+
+* {
+    background-color: white
+    ;
+}
+
+.pdate {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: white;
+    width: 215px;
+    height: 86px;   
+}
+
+/* ------------------------------------------------------------------- */
+/* AJUSTES PARA EXPORTAÇÃO (Divs Substituindo Inputs) */
+/* ------------------------------------------------------------------- */
+
+/* 1. Ajuste Geral para Linhas de Descrição/Valor (line-input e line-input1) */
+.line-input.static-content {
+    /* Define a altura exata que o texto deve ocupar */
+    height: 35px; 
+    
+    /* CHAVE: Garante que o texto fique alinhado um pouco acima da borda */
+    /* Isso 'empurra' o texto para cima, evitando que a linha o corte. */
+    padding-top: 10px;
+    
+    /* CHAVE 3: Centraliza o texto verticalmente dentro da linha */
+    line-height: 2px;
+    /* Garante que o texto se comporte como um bloco para respeitar a altura */
+    display: block; 
+    
+    /* Importante para a linha de descrição (line-input1) */
+    text-align: left;
+}
+.line-input1.static-content {
+    /* Define a altura exata que o texto deve ocupar */
+    height: 40px; 
+    
+    /* CHAVE: Garante que o texto fique alinhado um pouco acima da borda */
+    /* Isso 'empurra' o texto para cima, evitando que a linha o corte. */
+    padding-top: 15px;
+    
+    /* CHAVE 3: Centraliza o texto verticalmente dentro da linha */
+    line-height: 2px;
+    /* Garante que o texto se comporte como um bloco para respeitar a altura */
+    display: block; 
+    
+    /* Importante para a linha de descrição (line-input1) */
+    text-align: left;
+}
+
+
+/* 2. Ajuste Específico para as LINHAS DE ASSINATURA */
+
+/* A div de substituição herda a classe signature-line + static-content */
+.signature-line.static-content {
+    /* CHAVE 1: Ajusta a altura da linha para comportar o nome */
+    height: 40px; 
+    padding-top: 20px;
+    /* CHAVE 2: Define o espaçamento interno do texto em relação à linha de baixo. */
+    /* Se o nome estiver cortado no meio, aumente o padding-bottom ou ajuste line-height. */
+    padding-bottom: 5px; /* Mantém o espaço para o texto */
+
+    /* CHAVE 3: Centraliza o texto verticalmente dentro da linha */
+    line-height: 21px;
+    
+    /* Garante que não haja bordas laterais indesejadas */
+    border: none;
+    
+    /* Aplica novamente a linha inferior apenas. */
+    border-bottom: 1px solid #000;
+    
+    /* Centraliza o nome horizontalmente */
+    text-align: center;
+}
+
+/* 3. Ajuste para a Data (date-input) */
+.date-input.static-content {
+    display: inline-block;
+    padding-top: 0px; /* Alinha o número em relação ao texto "Data:" */
+    height: 27px;
+    /* CHAVE 3: Centraliza o texto verticalmente dentro da linha */
+}

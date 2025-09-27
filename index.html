@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S-24_T (4)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+    <div class="recibo-container">
+        <h1>RECIBO</h1>
+        <div class="section">
+            <div class="left-column">
+                <p style="font-size: 1.2em; font-weight: bold;">Escolha o tipo:</p>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="tipo" value="donativo"> Donativo</label> <br>
+                    <label><input type="checkbox" name="tipo" value="deposito"> Depósito no cofre</label>
+                </div>
+            </div>
+            <div class="section">
+                <div class="left-column2">
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="tipo" value="pagamento"> Pagamento</label> <br>
+                        <label><input type="checkbox" name="tipo" value="adiantamento"> Adiantamento</label>
+                    </div>
+                </div>
+            </div>
+            <div class="right-column">
+                <p style="font-size: 1.2em; font-weight: bold;" class="pdate">
+                    Data: <input type="text" class="date-input" maxlength="10" onkeyup="formatarData(this)">
+                </p>
+            </div>
+        </div>
+
+
+        <div class="linhas-section">
+            <div class="linhas-descriptions">
+                <p class="type-donate">Donativos — Obra mundial</p>
+                <p class="type-donate">Donativos — Despesas da congregação local</p>
+                <input type="text" class="line-input1">
+                <input type="text" class="line-input1">
+                <input type="text" class="line-input1">
+                <div class="total-section">
+                    TOTAL:
+                </div>
+            </div>
+
+            <div class="linhas-inputs">
+                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
+                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
+                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
+                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
+                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
+                <input type="text" class="line-total-input" onkeyup="formatarMoeda(this)">
+            </div>
+        </div>
+        <div class="signature-section">
+            <div>
+                <input type="text" class="signature-line">
+                <div class="signature-label">(Preenchido por)</div>
+            </div>
+            <div>
+                <input type="text" class="signature-line">
+                <div class="signature-label">(Conferido por)</div>
+            </div>
+            <div class="footer">
+                S-24-T &nbsp; 05/21
+            </div>
+        </div>
+    </div>
+</body>
+<button id="exportarPDF">Exportar para PDF</button>
+<script src="index.js"></script>
+
+</html>
