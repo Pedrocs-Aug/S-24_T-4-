@@ -256,8 +256,6 @@ h1 {
 }
 
 .pdfExport {
-    position: fixed;
-    bottom: 20px;
     background-color: red;
     color: white;
     border: none;
@@ -365,4 +363,15 @@ h1 {
 .pdfExport[disabled] {
     background-color: #555;
     cursor: not-allowed;
+}
+
+/* Seu estilo .pdfExport existente se aplica aos dois, mas vamos diferenciar */
+
+.pdfExport.local {
+    background-color: darkgreen; /* Uma cor diferente para o download local */
+    margin-right: 15px; /* Adiciona um pequeno espaço entre os botões */
+}
+
+.pdfExport.local:hover {
+    background-color: #004d00;
 }
