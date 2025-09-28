@@ -53,12 +53,12 @@
             </div>
 
             <div class="linhas-inputs">
-                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
-                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
-                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
-                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
-                <input type="text" class="line-input" onkeyup="formatarMoeda(this)">
-                <input type="text" class="line-total-input" onkeyup="formatarMoeda(this)">
+                <input type="text" class="line-input" onkeyup="formatarESomar(this)">
+                <input type="text" class="line-input" onkeyup="formatarESomar(this)">
+                <input type="text" class="line-input" onkeyup="formatarESomar(this)">
+                <input type="text" class="line-input" onkeyup="formatarESomar(this)" >
+                <input type="text" class="line-input" onkeyup="formatarESomar(this)">
+                <input type="text" class="line-total-input" id="valorTotal" disabled>
             </div>
         </div>
         <div class="signature-section">
@@ -78,5 +78,6 @@
 </body>
 <button id="exportarPDF">Exportar para PDF</button>
 <script src="index.js"></script>
+<script src="total.js"></script>
 
 </html>
