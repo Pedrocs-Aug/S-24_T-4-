@@ -1,5 +1,9 @@
 /* Media Query: Aplica-se quando a largura da tela é menor que 600px */
 @media (max-width: 600px) {
+
+    .body {
+        padding: 10px; /* Reduz o padding para telas menores */
+    }
     
     /* 1. Quebra as colunas principais em linhas */
     .section {

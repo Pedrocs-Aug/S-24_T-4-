@@ -235,6 +235,9 @@ h1 {
 }
 
 .footer {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
     font-size: 20px;
 }
 
@@ -252,6 +255,21 @@ h1 {
     height: 86px;   
 }
 
+.pdfExport {
+    position: fixed;
+    bottom: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pdfExport:hover {
+    background-color: darkred;
+    padding: 12px 17px;
+}
 /* ------------------------------------------------------------------- */
 /* AJUSTES PARA EXPORTAÇÃO (Divs Substituindo Inputs) */
 /* ------------------------------------------------------------------- */
@@ -321,4 +339,30 @@ h1 {
     padding-top: 0px; /* Alinha o número em relação ao texto "Data:" */
     height: 27px;
     /* CHAVE 3: Centraliza o texto verticalmente dentro da linha */
+}
+
+/* Estilo para a substituição de checkbox no PDF */
+.static-checkbox {
+    /* Garante que o caractere unicode se alinhe com o texto */
+    display: inline-block;
+    vertical-align: middle; 
+    /* Garante que o tamanho da fonte seja igual ou maior que o dos labels */
+    font-size: 1.2em; 
+    /* Adiciona margem para separar da label do lado */
+    margin-right: 10px; 
+    /* O transform do input original precisa ser copiado para o span */
+    transform: scale(1.2); 
+    line-height: 1; /* Alinha bem o texto */
+}
+
+/* Garante que o input original não apareça onde o checkbox estático está */
+.checkbox-group input[type="checkbox"] {
+    /* ... seus estilos originais ... */
+    visibility: visible; /* Mantenha visible no original */
+}
+
+/* Opcional: Altera o texto do botão para indicar o status de envio */
+.pdfExport[disabled] {
+    background-color: #555;
+    cursor: not-allowed;
 }
