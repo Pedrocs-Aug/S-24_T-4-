@@ -21,9 +21,9 @@ const exportarBotao = document.getElementById('exportarPDF');
 const exportarLocalBotao = document.getElementById('exportarLocal'); // Novo botão
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// SUBSTITUA PELA SUA URL DE IMPLANTAÇÃO (WEB APP URL) DO GOOGLE APPS SCRIPT
+// ESTE É O SEU URL DE IMPLANTAÇÃO (WEB APP URL) DO GOOGLE APPS SCRIPT
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx-nisGXNAsbfNyh5m-QmouwrQcZtEIAO8YNLCfxCKJiBUfcen_5f0Wn6OK1oOY6k6c/exec'; 
+const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzFHqO5BzpPhKFQK_FprI9A437balkgM0PV8DpOajqPofWeqobsZj1DHCE5d43OzzThNQ/exec'; 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
@@ -92,15 +92,19 @@ function prepararParaExportacao() {
  * @param {string} filename - Nome do arquivo a ser salvo no Drive.
  */
 function uploadToGoogleDrive(base64Data, filename) {
-    const dataToSend = new FormData();
-    dataToSend.append('data', base64Data);
-    dataToSend.append('filename', filename);
+    // CORREÇÃO: CRIA A STRING URL-ENCODED (chave=valor&chave2=valor2)
+    const dataToSend = `data=${encodeURIComponent(base64Data)}&filename=${encodeURIComponent(filename)}`;
 
     exportarBotao.textContent = 'Enviando para o Drive... ⏳';
 
     fetch(GOOGLE_APPS_SCRIPT_URL, {
         method: 'POST',
+        // O corpo é a string criada
         body: dataToSend,
+        // O header Content-Type é obrigatório para que o Apps Script processe o corpo da requisição (e.postData.contents)
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
     })
     .then(response => response.text())
     .then(result => {
@@ -108,6 +112,8 @@ function uploadToGoogleDrive(base64Data, filename) {
         if (result.includes('Sucesso')) {
             exportarBotao.textContent = '✅ Salvo no Drive!';
         } else {
+            // Se o Apps Script retornar 'Erro: Dados de requisição inválidos.', 
+            // a mensagem será exibida aqui.
             alert('❌ Erro no upload! Verifique o console ou o Apps Script: ' + result);
             exportarBotao.textContent = '❌ Erro no Upload.';
         }
